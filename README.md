@@ -53,7 +53,7 @@ To integrate the Manim MCP server with Claude, add the following to your `claude
      "manim-server": {
       "command": "/absolute/path/to/python",
       "args": [
-        "/absolute/path/to/manim-mcp-server/src/manim_server.py"
+        "/absolute/path/to/manim-mcp-server/manim_server.py"
       ],
       "env": {
         "MANIM_EXECUTABLE": "/Users/[Your_username]/anaconda3/envs/manim2/Scripts/manim.exe"
