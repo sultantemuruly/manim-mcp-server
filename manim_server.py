@@ -4,6 +4,7 @@ import os
 import shutil
 from mcp.server.fastmcp import FastMCP
 
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",

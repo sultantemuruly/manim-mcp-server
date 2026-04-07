@@ -11,6 +11,7 @@ dependencies = [
     "langchain-mcp-adapters>=0.2.2",
     "manim>=0.20.1",
     "mcp>=1.27.0",
+    "gradio>=6.11.0",
 ]
 
 [tool.pyright]
