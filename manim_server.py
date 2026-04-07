@@ -12,7 +12,10 @@ logging.basicConfig(
 )
 logger = logging.getLogger("manim-mcp")
 
-mcp = FastMCP()
+mcp = FastMCP(
+    host=os.getenv("MCP_HOST", "0.0.0.0"),
+    port=int(os.getenv("MCP_PORT", "8000")),
+)
 
 MANIM_EXECUTABLE = os.getenv("MANIM_EXECUTABLE", "manim")
 
@@ -77,8 +80,12 @@ def cleanup_manim_temp_dir(directory: str) -> str:
 
 
 if __name__ == "__main__":
-    logger.info("Starting Manim MCP server (stdio transport)")
-    mcp.run(transport="stdio")
+    transport = os.getenv("MCP_TRANSPORT", "stdio")
+    logger.info("Starting Manim MCP server (transport=%s)", transport)
+    if transport == "streamable-http":
+        mcp.run(transport="streamable-http")
+    else:
+        mcp.run(transport="stdio")
 
 
 

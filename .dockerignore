@@ -1,0 +1,11 @@
+.venv/
+.env
+media/
+__pycache__/
+*.pyc
+.git/
+uv.lock
+agent.py
+test_mcp.py
+*.gif
+docker-compose.yml

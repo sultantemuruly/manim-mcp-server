@@ -1,0 +1,15 @@
+services:
+  manim-mcp-server:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./media:/app/media
+    env_file:
+      - .env
+    environment:
+      MANIM_EXECUTABLE: manim
+      MCP_TRANSPORT: streamable-http
+      MCP_HOST: 0.0.0.0
+      MCP_PORT: "8000"
+    restart: unless-stopped
