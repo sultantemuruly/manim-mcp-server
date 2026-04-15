@@ -3,7 +3,7 @@ FROM manimcommunity/manim:latest
 USER root
 
 # Install MCP package (Manim, FFmpeg, Cairo, LaTeX already in base image)
-RUN pip install --no-cache-dir "mcp[cli]>=1.27.0"
+RUN pip install --no-cache-dir "mcp[cli]>=1.27.0" "supabase>=2.0.0"
 
 WORKDIR /app
 
